@@ -20,7 +20,7 @@ class _ParametersPageState extends State<ParametersPage> {
     'GCVI',
     'MCARI',
     'SIPI',
-    'pH',
+    'pH x (0.1)',
     'Temperature (°C)',
     'EC (µS/cm)'
   ];
@@ -32,8 +32,8 @@ class _ParametersPageState extends State<ParametersPage> {
     for (int i = 1; i <= 14; i++) {
       String index1 = '1';
 
-      final response = await http.get(Uri.parse(
-          'https://flask-vercel-stjo.onrender.com/parameters/$index1'));
+      final response = await http.get(
+          Uri.parse('https://elc-api-index.onrender.com/parameters/$index1'));
 
       if (response.statusCode == 200) {
         List<dynamic> responseData = jsonDecode(response.body);

@@ -11,31 +11,49 @@ class ActivityDetailsCard extends StatelessWidget {
       physics: NeverScrollableScrollPhysics(),
       children: [
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(12),
           child: CustomCard(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
-                  'Title 1',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                SizedBox(
+                  height: 25,
                 ),
-                Text('Description 1'),
+                Text(
+                  textAlign: TextAlign.center,
+                  'Manjal Khurd ',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text('Field 1'),
+                Text('Crop = Rice/Wheat'),
+                Text('Node Status = Active'),
               ],
             ),
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(12),
           child: CustomCard(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
-                  'Title 2',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                SizedBox(
+                  height: 25,
                 ),
-                Text('Description 2'),
+                Text(
+                  textAlign: TextAlign.center,
+                  'Manjal Khurd ',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text('Field 2'),
+                Text('Crop = Rice/Wheat'),
+                Text('Node Status = Active'),
               ],
             ),
           ),

@@ -17,8 +17,8 @@ class _NPKValuesPageState extends State<NPKValuesPage> {
   Future<List<dynamic>> fetchPredictedValues() async {
     try {
       String index = '1';
-      final response = await http.get(
-          Uri.parse('https://flask-vercel-stjo.onrender.com/predict/$index'));
+      final response = await http
+          .get(Uri.parse('https://elc-api-index.onrender.com/predict/$index'));
       final data = jsonDecode(response.body);
       if (response.statusCode != 200) {
         throw 'An unexpected error ';
