@@ -1,56 +1,46 @@
-import 'package:fitness_dashboard_ui/data/health_details.dart';
-import 'package:fitness_dashboard_ui/util/responsive.dart';
-import 'package:fitness_dashboard_ui/widgets/custom_card_widget.dart';
 import 'package:flutter/material.dart';
+import 'custom_card_widget.dart';
 
 class ActivityDetailsCard extends StatelessWidget {
-  const ActivityDetailsCard({super.key});
-
   @override
   Widget build(BuildContext context) {
-    final healthDetails = HealthDetails();
-
-    return GridView.builder(
-      itemCount: 2,
+    return GridView.count(
+      crossAxisCount: 2,
+      childAspectRatio: 1,
       shrinkWrap: true,
-      physics: const ScrollPhysics(),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: Responsive.isMobile(context) ? 2 : 4,
-        crossAxisSpacing: Responsive.isMobile(context) ? 12 : 15,
-        mainAxisSpacing: 10.0,
-      ),
-      itemBuilder: (context, index) => CustomCard(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Image.asset(
-              healthDetails.healthData[index].icon,
-              width: 30,
-              height: 30,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 15, bottom: 4),
-              child: Text(
-                healthDetails.healthData[index].value,
-                style: const TextStyle(
-                  fontSize: 18,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600,
+      physics: NeverScrollableScrollPhysics(),
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: CustomCard(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Title 1',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
-              ),
+                Text('Description 1'),
+              ],
             ),
-            Text(
-              healthDetails.healthData[index].title,
-              style: const TextStyle(
-                fontSize: 14,
-                color: Color.fromARGB(255, 210, 224, 216),
-                fontWeight: FontWeight.normal,
-              ),
-            ),
-          ],
+          ),
         ),
-      ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: CustomCard(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Title 2',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+                Text('Description 2'),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

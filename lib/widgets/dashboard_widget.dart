@@ -19,7 +19,7 @@ class DashboardWidget extends StatelessWidget {
 
             const WeatherWidget(), // Add the WeatherWidget here
             const SizedBox(height: 18),
-            const ActivityDetailsCard(),
+            ActivityDetailsCard(),
             const SizedBox(height: 18),
             const LineChartCard(),
             const SizedBox(height: 18),

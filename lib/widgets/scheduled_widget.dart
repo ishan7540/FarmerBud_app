@@ -21,7 +21,7 @@ class Scheduled extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 5),
             child: CustomCard(
-              color: Colors.black,
+              color: Color.fromARGB(255, 63, 113, 54),
               child: Column(
                 children: [
                   Row(

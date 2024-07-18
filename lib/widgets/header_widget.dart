@@ -12,7 +12,7 @@ class HeaderWidget extends StatelessWidget {
       children: [
         if (!Responsive.isDesktop(context))
           Padding(
-            padding: const EdgeInsets.only(right: 20),
+            padding: const EdgeInsets.all(8),
             child: InkWell(
               onTap: () => Scaffold.of(context).openDrawer(),
               child: Padding(
@@ -52,15 +52,15 @@ class HeaderWidget extends StatelessWidget {
           Row(
             children: [
               InkWell(
-                onTap: () => Scaffold.of(context).openEndDrawer(),
-                child: CircleAvatar(
-                  backgroundColor: Colors.transparent,
-                  child: Image.asset(
-                    "assets/images/avatar.png",
-                    width: 32,
-                  ),
-                ),
-              ),
+                  onTap: () => Scaffold.of(context).openEndDrawer(),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Icon(
+                      Icons.person,
+                      size: 32,
+                      color: Colors.grey,
+                    ),
+                  )),
             ],
           ),
       ],
